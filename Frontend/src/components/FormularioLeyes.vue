@@ -46,7 +46,7 @@ export default {
   methods: {
     agregarLey() {
       axios
-        .post('http://127.0.0.1:5000/leyes', this.ley)
+        .post('https://julietxcalderon.pythonanywhere.com/leyes', this.ley)
         .then(() => {
           console.log('Ley guardada correctamente');
           this.leerLeyes();
@@ -62,7 +62,7 @@ export default {
     },
     leerLeyes() {
       axios
-        .get('http://127.0.0.1:5000/leyes')
+        .get('https://julietxcalderon.pythonanywhere.com/leyes')
         .then(response => {
           this.leyes = response.data;
           console.log('Leyes:', this.leyes);
@@ -72,7 +72,7 @@ export default {
       });
     },
     actualizarLey() {
-      const url = ('http://127.0.0.1:5000/leyes/${this.ley.codigo}');
+      const url = ('https://julietxcalderon.pythonanywhere.com/leyes/${this.ley.codigo}');
       axios
         .put(url, { descripcion: this.ley.descripcion })
         .then(() => {
@@ -86,7 +86,7 @@ export default {
       });
     },
     eliminarLey() {
-      const url = ('http://127.0.0.1:5000/leyes/${this.ley.codigo}');
+      const url = ('https://julietxcalderon.pythonanywhere.com/leyes/${this.ley.codigo}');
       axios
         .delete(url)
         .then(() => {
