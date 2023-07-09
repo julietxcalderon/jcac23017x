@@ -13,8 +13,8 @@ class Config:
     SECRET_KEY = 'tu_clave_secreta'
 
     # Configuración de Flask-CORS
-    CORS_ORIGINS = [
-        'http://localhost:8080', 
-    ]
+    # CORS_ORIGINS = [
+    #    'http://localhost:8080', 
+    #]
     CORS_METHODS = ['GET', 'POST', 'PUT', 'DELETE']
     CORS_ALLOW_HEADERS = ['Content-Type', 'Authorization']
