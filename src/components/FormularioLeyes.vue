@@ -3,22 +3,22 @@
     <h1>Formulario de Leyes</h1>
     <form @submit.prevent="submitForm">
       <div class="form-group">
-        <label for="codigo">Código de la Ley:</label>
+        <label for="codigo">Código:</label>
         <input type="text" id="codigo" v-model="ley.codigo" required>
       </div>
       <div class="form-group">
-        <label for="descripcion">Descripción de la Ley:</label>
+        <label for="descripcion">Descripción:</label>
         <input type="text" id="descripcion" v-model="ley.descripcion" required>
       </div>
       <div class="form-buttons">
-        <button type="button" @click="consultarLeyes">Consultar Leyes</button>
-        <button type="button" @click="agregarLey">Agregar Ley</button>
-        <button type="button" @click="eliminarLey">Eliminar Ley</button>
-        <button type="button" @click="actualizarLey">Actualizar Ley</button>
+        <button type="button" @click="consultarLeyes">Consultar leyes</button>
+        <button type="button" @click="agregarLey">Agregar</button>
+        <button type="button" @click="eliminarLey">Eliminar</button>
+        <button type="button" @click="actualizarLey">Actualizar</button>
       </div>
     </form>
     <div v-if="mostrarLeyesRegistradas">
-      <h2>Leyes Registradas</h2>
+      <h2>#LeyesRegistradas</h2>
       <ul class="leyes-list">
         <li v-for="ley in leyesRegistradas" :key="ley.codigo">
           {{ ley.codigo }} - {{ ley.descripcion }}
@@ -38,7 +38,7 @@
           {{ ley.codigo }} - {{ ley.descripcion }}
         </li>
       </ul>
-      <button type="button" @click="confirmarCarrito">Confirmar Carrito</button>
+      <button type="button" @click="confirmarCarrito">Confirmar</button>
     </div>
     <div v-if="mostrarInventario">
       <h2>Inventario</h2>
@@ -47,7 +47,7 @@
           {{ ley.codigo }} - {{ ley.descripcion }}
         </li>
       </ul>
-      <button type="button" @click="descargarInventario">Descargar Inventario</button>
+      <button type="button" @click="descargarInventario">Descargar</button>
     </div>
   </div>
 </template>
@@ -243,7 +243,7 @@ export default {
 
 <style scoped>
 .formulario-leyes {
-  background-color: #000000;
+  background-color: #00000041;
   padding: 20px;
   border-radius: 5px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
@@ -255,11 +255,11 @@ export default {
 
 .formulario-leyes h1 {
   font-size: 24px;
-  margin-bottom: 20px;
+  margin-bottom: 30px;
 }
 
 .form-group {
-  margin-bottom: 20px;
+  margin-bottom: 40px;
 }
 
 label {
@@ -267,21 +267,22 @@ label {
   font-size: 16px;
   font-weight: bold;
   margin-bottom: 5px;
-  color: lightskyblue;
+  color: rgba(135, 206, 250, 0.438);
 }
 
 input {
   width: 100%;
   padding: 10px;
-  border: 1px solid #ccc;
+  border: 1px solid #cccccc8c;
   border-radius: 3px;
   font-size: 14px;
 }
 
 button {
   padding: 10px;
-  background-color: #afa54c;
-  color: #fff;
+  background-color: #5fbbc27c;
+  color: #ffffffe3;
+  font-family: monospace;
   border: none;
   border-radius: 3px;
   font-size: 16px;
@@ -290,7 +291,7 @@ button {
 }
 
 button:hover {
-  background-color: #a07845;
+  background-color: #d699678e;
 }
 
 button:disabled {
@@ -313,8 +314,16 @@ button:disabled {
 }
 
 .leyes-list {
-  margin-top: 20px;
+  margin-top: 50px;
   list-style-type: none;
+  background-color: #00000041;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  align-items: right;
 }
 
 .leyes-list li {
@@ -324,18 +333,33 @@ button:disabled {
 .inventario-list {
   margin-top: 20px;
   list-style-type: none;
+  background-color: #00000041;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  align-items: right;
 }
 
 .inventario-list li {
-  margin-bottom: 10px;
+  margin-bottom: 20px;
 }
 
 .carrito-list {
-  margin-top: 20px;
-  list-style-type: none;
+  margin-top: 50px;
+  background-color: #00000041;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  align-items: right;
 }
 
 .carrito-list li {
-  margin-bottom: 10px;
+  margin-bottom: 20px;
 }
 </style>
